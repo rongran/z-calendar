@@ -30,6 +30,7 @@ ZCalendar.prototype = {
             calendar = document.getElementById(this.id);
             tt = document.createElement('tt'); //<tt> 标签呈现类似打字机或者等宽的文本效果。
         //calendar.setAttribute('id', 'z_calendar');
+        calendar.innerHTML = '';
 
         var thead = document.createElement('span');    //日历的头部或者页眉
         //body.insertBefore(calendar, null); //日历插入DOM树
@@ -82,10 +83,11 @@ ZCalendar.prototype = {
                 fragment.appendChild(td);
             } else {
                 var html = arr[i].split('-')[2];
+                var now = new Date();
                 td.innerHTML = html;
                 td.className = 'day';
                 td.href = 'javascript:void(0)'; //为IE6准备
-                if(date && html == date) {
+                if(date && html === date && (month === now.getMonth() + 1) && year === now.getFullYear()) {
                     td.className = td.className + ' current';
                 }
                 if(i % 7 === 0 || i % 7 === 6) {
