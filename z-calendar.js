@@ -2,16 +2,17 @@
  * Created by zjz on 2014/8/28.
  */
 
-var ZClalendar = function () {
+var ZCalendar = function (id) {
+    this.id = id;
     var now = new Date();
     this.drawCalendar(now.getFullYear(), now.getMonth() + 1, now.getDate());
 }
 
-ZClalendar.prototype = {
-    fillArray: function (year, month) {
+ZCalendar.prototype = {
+    fillArray: function(year, month) {
         var firstDay = new Date(year, month - 1, 1).getDay(),  //求出当月第一天星期几
             dates = new Date(year, month, 0).getDate(); //上个月第0天即当月最后一天，最后一天就是总天数
-            arr = new Array(42); //用来装载日期的数组，日期以 xxxx-xx-xx的形式表示
+        arr = new Array(42); //用来装载日期的数组，日期以 xxxx-xx-xx的形式表示
 
         for(var i = 0, j = firstDay; i < dates; i++, j++) {
             arr[j] = year + '-' + month + '-' + (i + 1);
@@ -20,17 +21,18 @@ ZClalendar.prototype = {
     },
 
     drawCalendar: function(year, month, date) {
-        var _calendar = document.getElementById('calendar');
-        if(_calendar) _calendar.parentNode.removeChild(_calendar);
+        //var _calendar = document.getElementById(this.id);
+        //if(_calendar) _calendar.parentNode.removeChild(_calendar);
 
         var body = document.getElementsByTagName('body')[0],
             a = document.createElement('a'), //日历a元素 用于克隆
-            calendar = document.createElement('div'), //日历的容器元素
+            //calendar = document.createElement('div'), //日历的容器元素
+            calendar = document.getElementById(this.id);
             tt = document.createElement('tt'); //<tt> 标签呈现类似打字机或者等宽的文本效果。
-        calendar.id = 'z_calendar';
+        //calendar.setAttribute('id', 'z_calendar');
 
         var thead = document.createElement('span');    //日历的头部或者页眉
-        body.insertBefore(calendar, null); //日历插入DOM树
+        //body.insertBefore(calendar, null); //日历插入DOM树
 
         var fragment = document.createDocumentFragment(); //减少DOM刷新页面的次数
 
@@ -89,11 +91,13 @@ ZClalendar.prototype = {
                 if(i % 7 === 0 || i % 7 === 6) {
                     td.className = td.className  + ' weekend';
                 }
-         /*       td.onclick = (function(i) {
+                /*
+                td.onclick = (function(i) {
                     return function() {
                         alert(i);
                     }
-                })(arr[i]);*/
+                })(arr[i]);
+                */
                 fragment.appendChild(td);
             }
         }

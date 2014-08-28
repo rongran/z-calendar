@@ -5,8 +5,10 @@
     float: left;
     font-family: 'Helvetica', sans-serif;
     font-size: 14px;
-    border-radius: 5px;
-    box-shadow: 0 0 2px #479ac7;
+    -webkit-border-radius: 5px;
+             border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #479ac7;
+             box-shadow: 0 0 2px #479ac7;
 }
 
 #z_calendar span {
@@ -22,6 +24,10 @@
 
 #z_calendar .week {
     color: #808080;
+}
+
+#z_calendar .weekend {
+    color: #f00 !important;
 }
 
 #z_calendar .current {
@@ -58,10 +64,6 @@
 
 #z_calendar .month-btn:hover {
     color: #fff;
-}
-
-#z_calendar .weekend {
-    color: #f00 !important;
 }
 
 #z_calendar a.day {
