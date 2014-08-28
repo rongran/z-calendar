@@ -42,12 +42,22 @@
     margin: 1px;
 }
 
-#z_calendar .ybn {
-    color: #000;
+#z_calendar .year-btn {
+      color: #000;
+      margin-left: 22px;
+      margin-right: 22px;
 }
 
-#z_calendar .mbn {
+#z_calendar .year-btn:hover {
+    color: #fff;
+}
+
+#z_calendar .month-btn {
     color: #000040;
+}
+
+#z_calendar .month-btn:hover {
+    color: #fff;
 }
 
 #z_calendar .weekend {
@@ -64,6 +74,5 @@
 
 #z_calendar tt {
     cursor: pointer;
-    margin-left: 10px;
-    margin-right: 10px;
+    font-weight: bold;
 }

@@ -60,8 +60,8 @@ ZClalendar.prototype = {
         tts[1].innerHTML = '&lt;';
         tts[2].innerHTML = '&gt;';
         tts[3].innerHTML = '&gt;&gt;'
-        tts[0].className = tts[3].className = 'mbn';
-        tts[1].className = tts[2].className = 'ybn';
+        tts[0].className = tts[3].className = 'month-btn';
+        tts[1].className = tts[2].className = 'year-btn';
         fragment.appendChild(thead);
 
         //日历第二行内容星期
