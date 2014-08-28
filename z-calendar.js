@@ -87,7 +87,7 @@ ZCalendar.prototype = {
                 td.innerHTML = html;
                 td.className = 'day';
                 td.href = 'javascript:void(0)'; //为IE6准备
-                if(date && html === date && (month === now.getMonth() + 1) && year === now.getFullYear()) {
+                if(date && html == date && (month == now.getMonth() + 1) && year == now.getFullYear()) {
                     td.className = td.className + ' current';
                 }
                 if(i % 7 === 0 || i % 7 === 6) {

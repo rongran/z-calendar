@@ -1,4 +1,4 @@
-#z_calendar {
+.z-calendar {
     width: 235px;
     background-color: #e0ecf9;
     border: 1px solid #479ac7;
@@ -11,7 +11,7 @@
              box-shadow: 0 0 2px #479ac7;
 }
 
-#z_calendar span {
+.z-calendar span {
     float: left;
     width: 235px;
     height: 20px;
@@ -22,20 +22,20 @@
     padding-bottom: 5px;
 }
 
-#z_calendar .week {
+.z-calendar .week {
     color: #808080;
 }
 
-#z_calendar .weekend {
+.z-calendar .weekend {
     color: #f00 !important;
 }
 
-#z_calendar .current {
+.z-calendar .current {
     background-color: #336699;
     color: #fff;
 }
 
-#z_calendar a {
+.z-calendar a {
     display: block;
     float: left;
     width: 30px;
@@ -48,33 +48,33 @@
     margin: 1px;
 }
 
-#z_calendar .year-btn {
+.z-calendar .year-btn {
       color: #000;
       margin-left: 22px;
       margin-right: 22px;
 }
 
-#z_calendar .year-btn:hover {
+.z-calendar .year-btn:hover {
     color: #fff;
 }
 
-#z_calendar .month-btn {
+.z-calendar .month-btn {
     color: #000040;
 }
 
-#z_calendar .month-btn:hover {
+.z-calendar .month-btn:hover {
     color: #fff;
 }
 
-#z_calendar a.day {
+.z-calendar a.day {
     border-radius: 100%;
 }
 
-#z_calendar a.day:hover {
+.z-calendar a.day:hover {
     background-color: #99c3f6;
 }
 
-#z_calendar tt {
+.z-calendar tt {
     cursor: pointer;
     font-weight: bold;
 }
