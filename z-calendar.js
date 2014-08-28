@@ -27,7 +27,7 @@ ZClalendar.prototype = {
             a = document.createElement('a'), //日历a元素 用于克隆
             calendar = document.createElement('div'), //日历的容器元素
             tt = document.createElement('tt'); //<tt> 标签呈现类似打字机或者等宽的文本效果。
-        calendar.id = 'calendar';
+        calendar.id = 'z_calendar';
 
         var thead = document.createElement('span');    //日历的头部或者页眉
         body.insertBefore(calendar, null); //日历插入DOM树
@@ -51,7 +51,7 @@ ZClalendar.prototype = {
             tts[i] = clone; //保存引用
             if(i == 2) {
                 thead.appendChild(document.createTextNode(
-                        year + '-' + month + '-' + date));
+                        year + ' - ' + month + ' - ' + date));
             }
             thead.appendChild(clone);
         }
@@ -89,11 +89,11 @@ ZClalendar.prototype = {
                 if(i % 7 === 0 || i % 7 === 6) {
                     td.className = td.className  + ' weekend';
                 }
-                td.onclick = (function(i) {
+         /*       td.onclick = (function(i) {
                     return function() {
                         alert(i);
                     }
-                })(arr[i]);
+                })(arr[i]);*/
                 fragment.appendChild(td);
             }
         }
